@@ -9,6 +9,7 @@ using Order.Application.EventConsumer;
 using Microsoft.Extensions.Hosting;
 using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
+using GlobalErrorHandling;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +39,8 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 
 var app = builder.Build();
+
+app.UseMiddleware<GlobalErrorHandlerMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
