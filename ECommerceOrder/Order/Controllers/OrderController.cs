@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Order.Application;
 using Order.Infrastructure.Interfaces;
 
 namespace ECommerceOrder.Controllers
@@ -9,31 +10,31 @@ namespace ECommerceOrder.Controllers
     [Authorize]
     public class OrderController : ControllerBase
     {
-        private readonly IOrderRepository _orderRepository;
+        private readonly IOrderService _orderService;
 
-        public OrderController(IOrderRepository orderRepository)
+        public OrderController(IOrderService orderService)
         {
-            _orderRepository = orderRepository;
+            _orderService = orderService;
         }
 
         [HttpGet("getallorders")]
         public async Task<IActionResult> GetAllOrders()
         {
-            var orders = await _orderRepository.GetAllAsync();
+            var orders = await _orderService.GetAllOrdersAsync();
             return Ok(orders);
         }
 
         [HttpGet("getorder/{Id:int}")]
         public async Task<IActionResult> GetOrder(int Id)
         {
-            var order = await _orderRepository.GetByIdAsync(Id);
+            var order = await _orderService.GetOrder(Id);
             return Ok(order);
         }
 
         [HttpPost("createorder")]
         public async Task<IActionResult> CreateOrder([FromBody] Order.Domain.Entities.Order order)
         {
-            await _orderRepository.AddAsync(order);
+            await _orderService.CreateOrder(order);
             return Ok(order);
         }
 
@@ -41,7 +42,7 @@ namespace ECommerceOrder.Controllers
         [Authorize(Roles = "Administrator,User")]
         public async Task<IActionResult> UpdateOrder([FromBody] Order.Domain.Entities.Order order)
         {
-            await _orderRepository.UpdateAsync(order);
+            await _orderService.UpdateOrder(order);
             return Ok(order);
         }
 
@@ -49,7 +50,7 @@ namespace ECommerceOrder.Controllers
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteOrder(int Id)
         {
-            await _orderRepository.DeleteAsync(Id);
+            await _orderService.DeleteOrder(Id);
             return Ok(Id);
         }
     }

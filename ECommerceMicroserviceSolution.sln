@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthenticationManager", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationWebApi", "AuthenticationWebApi\AuthenticationWebApi.csproj", "{510B5011-8972-4DF2-BD7C-056B3D00862C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalErrorHandling", "GlobalErrorHandling\GlobalErrorHandling.csproj", "{A8C39B9D-4D36-4850-83D4-65E53B9A9750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalErrorHandling", "GlobalErrorHandling\GlobalErrorHandling.csproj", "{A8C39B9D-4D36-4850-83D4-65E53B9A9750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Api.UnitTest", "Order.Api.UnitTest\Order.Api.UnitTest.csproj", "{6D18E081-540B-41DF-A046-DC16E901AB36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,10 @@ Global
 		{A8C39B9D-4D36-4850-83D4-65E53B9A9750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8C39B9D-4D36-4850-83D4-65E53B9A9750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8C39B9D-4D36-4850-83D4-65E53B9A9750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D18E081-540B-41DF-A046-DC16E901AB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D18E081-540B-41DF-A046-DC16E901AB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D18E081-540B-41DF-A046-DC16E901AB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D18E081-540B-41DF-A046-DC16E901AB36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +125,7 @@ Global
 		{470EC9C6-FCFC-4E0E-B403-ADCED3393FD1} = {0CA7885B-396A-42EF-A90B-0F15DD92AC7D}
 		{93BAB008-8B38-46F7-AAEE-236861C50ABC} = {0FB3E7ED-1DB2-4011-A957-F939C8E43789}
 		{1C87F278-2CB7-4A30-B164-C557D4A39025} = {C14B500B-483B-411C-9D9B-C51948D26EE9}
+		{6D18E081-540B-41DF-A046-DC16E901AB36} = {0CA7885B-396A-42EF-A90B-0F15DD92AC7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {786293B4-D947-4262-AFC2-30334BB494A7}

@@ -1,0 +1,6 @@
+@ECommerceOrder.API.UnitTest_HostAddress = http://localhost:5100
+
+GET {{ECommerceOrder.API.UnitTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
