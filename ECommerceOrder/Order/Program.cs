@@ -30,7 +30,7 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddSingleton(provider =>
 {
-    return new ProductChangeEventConsumer(bootstrapServers, dependency);
+    return new ProductChangeEventConsumer(bootstrapServers);
 });
 
 builder.Services.AddScoped<IOrderService, OrderService>();
